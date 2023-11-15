@@ -205,10 +205,6 @@ select {
     font-size: 15px;
   }
 
-  select {
-    height: 50px;
-  }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -244,10 +240,6 @@ select {
   select,
   button[type="submit"] {
     font-size: 15px;
-  }
-
-  select {
-    height: 50px;
   }
 
 }
