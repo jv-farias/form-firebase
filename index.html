@@ -1,40 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Messages | Firebase</title>
+    <title>Formulário | FaceToFace</title>
     <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <form action="" id="dadosForm">
-            <div class="alert">Your message sent</div>
-
-            <div class="inputBox">
-                <input type="text" id="name" placeholder="Your name...." />
+    <main>
+        <div class="main-container">
+            <div class="title-container">
+                <h1 class="title">Registro FaceToFace</h1>
+                <p class="description">Sua colaboração é fundamental para o sucesso do nosso projeto! Pedimos
+                    gentilmente que reserve um momento
+                    para preencher o formulário abaixo. Suas respostas serão valiosas e nos auxiliarão na coleta de
+                    dados
+                    essenciais. Agradecemos antecipadamente pela sua participação e
+                    contribuição!</p>
             </div>
+            <form action="" id="dadosForm">
 
-            <div class="inputBox">
-                <input type="email" id="emailid" placeholder="Your Email....." />
-            </div>
+                <div class="inputBox">
+                    <input type="text" id="name" placeholder="Nome" required />
+                </div>
 
-            <div class="inputBox">
-                <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
-            </div>
+                <div class="inputBox">
+                    <input type="number" id="age" min="10" max="100" placeholder="Idade"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');" required />
+                </div>
 
-            <div class="inputBox">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
+                <div class="inputBox">
+                    <input type="text" id="role" placeholder="Cargo" required />
+                </div>
+
+                <div class="inputBox">
+                    <input type="text" id="avatar" placeholder="URL da sua imagem" required />
+                </div>
+
+                <div class="inputBox">
+                    <input type="text" id="social_link" placeholder="Rede Social" required />
+                </div>
+
+                <div class="inputBox">
+                    <select id="hobby" name="hobby-list" required>
+                        <option value="" disabled selected>Escolha uma opção</option>
+                        <option value="academia">Academia</option>
+                        <option value="cozinhar">Cozinhar</option>
+                        <option value="dormir">Dormir</option>
+                        <option value="filmes">Filmes/Séries</option>
+                        <option value="games">Games</option>
+                        <option value="ler">Ler</option>
+                        <option value="musica">Música</option>
+                        <option value="praia">Praia</option>
+                        <option value="programar">Programar</option>
+                        <option value="viajar">Viajar</option>
+                    </select>
+                </div>
+
+                <div class="inputBox">
+                    <button type="submit">Enviar</button>
+                </div>
+
+                <div class="alert">Formulário enviado com sucesso!</div>
+            </form>
+        </div>
+
+    </main>
+
+
+    <!-- 
+    <div id="app"></div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
-    <script src="./src/main.js"></script>
+    <script type="module" src="./src/main.js"></script>
 </body>
 
 </html>
-
