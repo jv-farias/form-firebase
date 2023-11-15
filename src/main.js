@@ -17,13 +17,20 @@ firebase.initializeApp(firebaseConfig);
 const facetofaceDB = firebase.database().ref('facetoface')
 
 /**
- * @type {HTMLElement}
+ * @property {HTMLFormElement} as formElement
  */
 
-document.querySelector('#dadosForm').addEventListener('submit', submitForm);
+const formElement = document.getElementById('dadosForm');
+
+if (formElement) {
+  // @ts-ignore
+  formElement.reset();
+  formElement.addEventListener('submit', submitForm);
+} else {
+  console.error('Elemento com id "dadosForm" não encontrado');
+}
 
 /**
- * 
  * @param {Event} e 
  */
 
@@ -39,26 +46,26 @@ function submitForm(e) {
 
   saveMessage(name, age, role, social_link, hobby, avatar);
 
+
   /**
-   * @type {HTMLElement} Elemento DOM com a classe 'alert'.
-   * 
+   * @property {HTMLElement} as alertElement
    */
 
-  document.querySelector('.alert').style.display = 'block';
+  const alertElement = document.querySelector('.alert');
 
-  //remove the alert 
-  setTimeout(() => {
 
-    /**
-  * @type {HTMLElement} Elemento DOM com a classe 'alert'.
-  */
+  if (alertElement) {
+    // @ts-ignore
+    alertElement.style.display = 'block';
 
-    document.querySelector('.alert').style.display = 'none';
-  }, 3000);
+    // Remova o alerta após 3 segundos
+    setTimeout(() => {
+      // @ts-ignore
+      alertElement.style.display = 'none';
+    }, 3000);
+  }
 
-  document.getElementById('dadosForm').reset();
 }
-
 
 /**
  * 
@@ -83,15 +90,11 @@ const saveMessage = (name, age, role, social_link, hobby, avatar) => {
 }
 
 /**
- * 
- * @param {*} id 
+ * @param {string } id 
  * @returns 
  */
 
 const getElementValue = (id) => {
-
-  /**
-   * @type {HTMLInputElement}
-   */
+  // @ts-ignore
   return document.getElementById(id).value
 }
