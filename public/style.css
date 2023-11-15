@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {
@@ -106,6 +106,7 @@ input[type=number] {
 }
 
 select {
+  height: 50px;
   width: 100%;
   padding: 0 0.75rem;
   border: none;
