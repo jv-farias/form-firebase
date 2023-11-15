@@ -218,7 +218,7 @@ select {
   }
 
   .main-container {
-
+    margin-top: 3rem;
     padding: 2rem;
     gap: 2rem;
   }
