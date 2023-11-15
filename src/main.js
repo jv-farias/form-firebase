@@ -1,5 +1,3 @@
-import firebase from "firebase/compat/app";
-
 const firebaseConfig = {
   apiKey: "AIzaSyAM1mn3jJY86f0eTYixRDQU5sN3-SMYQE4",
   authDomain: "facetoface-fee8a.firebaseapp.com",
@@ -11,9 +9,11 @@ const firebaseConfig = {
 };
 
 // Inicializa o Firebase
+// @ts-ignore
 firebase.initializeApp(firebaseConfig);
 
 // Reference your database
+// @ts-ignore
 const facetofaceDB = firebase.database().ref('facetoface')
 
 /**
@@ -55,11 +55,13 @@ function submitForm(e) {
 
 
   if (alertElement) {
+
     // @ts-ignore
     alertElement.style.display = 'block';
 
     // Remova o alerta após 3 segundos
     setTimeout(() => {
+  
       // @ts-ignore
       alertElement.style.display = 'none';
     }, 3000);
